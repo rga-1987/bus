@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="?attr/colorPrimary"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="13dp"
+        android:text="  Спасибо что используете наше приложение.Если у вас возникли проблемы или вопросы Вы можете обратиться в нашу техническую поддержку. "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="13dp"
+        android:text="Наши контакты: \n
+        email: repin_ga_1987@mail.ru \n
+        vk: http://vk.com/gena_vnovgorod \n
+        skype: gena_1987"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="13dp"
+        android:text="  Так же  если вам понравилось наше приложение, можете выразить свою благодарность или написать предложения по поводу развития нашего продукта
+по тем же контактам."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+</LinearLayout>

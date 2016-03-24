@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="?attr/colorPrimary"
+            android:background="@color/accent"
+            app:expandedTitleMarginStart="60dp"
+            app:expandedTitleMarginEnd="20dp"
+            app:expandedTitleMarginBottom="30dp"
+            android:fitsSystemWindows="true">
+
+            <ImageView
+                android:id="@+id/image"
+                android:src="@drawable/pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1000dp"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/bus_list"
+                android:clickable="true"
+                android:foreground="@drawable/card_foreground_selector"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20dp"
+                        android:paddingLeft="10dp"
+                        android:text="Расписания движения"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                    <ImageView
+                        android:id="@+id/card_thumbnail_image"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/bus"
+                        />
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="85dp"
+                        android:layout_marginTop="40dp"
+                        android:textSize="16dp"
+                        android:text="Расписания движения городских автобусов и троллейбусов"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:id="@+id/scheme"
+                android:layout_height="140dp"
+                android:clickable="true"
+                android:layout_below="@id/bus_list"
+                android:paddingTop="10dp"
+                android:foreground="@drawable/card_foreground_selector"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Схемы движения"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                    <ImageView
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/shema"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="85dp"
+                        android:layout_marginTop="40dp"
+                        android:textSize="16dp"
+                        android:text="Схемы движения городских автобусов и троллейбусов"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/enterprise_bus"
+                android:clickable="true"
+                android:layout_below="@id/scheme"
+                android:paddingTop="10dp"
+                android:foreground="@drawable/card_foreground_selector"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:gravity="left"
+                        android:text="Предприятия перевозчики:"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                    <ImageView
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/bus_list"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="85dp"
+                        android:layout_marginTop="40dp"
+                        android:textSize="16dp"
+                        android:text="Контакты предприятий осуществляющих пассажирские перевозки"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/help"
+                android:clickable="true"
+                android:layout_below="@id/enterprise_bus"
+                android:foreground="@drawable/card_foreground_selector"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:gravity="left"
+                        android:text="Справка:"
+                        android:layout_marginTop="5dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                    <ImageView
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@drawable/about"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="85dp"
+                        android:layout_marginTop="30dp"
+                        android:textSize="16dp"
+                        android:text="Если у вас возникли проблемы или вопросы, вы можете обратиться в техническую поддержку."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        app:layout_anchor="@id/app_bar_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        app:expandedTitleMarginBottom="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/accent"
+        android:src="@drawable/exit_to_app"
+        app:fabSize="normal"
+        android:phoneNumber="false"
+        android:autoText="false" />
+
+</android.support.design.widget.CoordinatorLayout>

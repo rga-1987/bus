@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">bus_vn</string>
+    <string name="action_settings">Settings</string>
+    <string name="tel_1_1"><u>8(8162)63-34-16</u></string>
+    <string name="tel_1_2"><u>8(8162)63-64-40</u></string>
+    <string name="site"><u>http://buspark53.ru/</u></string>
+    <string name="tel_2_1"><u>8(8162)961-701</u></string>
+    <string name="tel_3_1"><u>8(8162)62-14-20</u></string>
+    <string name="tel_3_2"><u>8(8162)62-15-65</u></string>
+    <string name="tel_4_1"><u>8(8162)961-701</u></string>
+</resources>
