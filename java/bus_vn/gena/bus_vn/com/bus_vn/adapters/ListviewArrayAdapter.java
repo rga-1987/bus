@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters;
+package bus_vn.gena.bus_vn.com.bus_vn.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -23,7 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.bus_vn.gena.bus_vn.R;
+import bus_vn.gena.bus_vn.com.bus_vn.R;
 /**
  * Created by gena on 10.10.2015.
  *

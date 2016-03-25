@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -26,16 +25,19 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by gena on 08.08.2015.
+ * Working with Database
+ * Created by Gena on 08.08.2015.
+ * @author Gena
+ * @version 1.0
+ *
  */
 public class DbOpenHelper extends SQLiteOpenHelper{
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "bus_vn";
-    private static final String DB_PATH = "/data/data/com.d_codepages.collapsingtoolbar/databases/";
+    private static final String DB_PATH = "/data/data/bus_vn.gena.bus_vn.com.bus_vn/databases/";
 
     Context myContext;
-    /////////Все таблицы базы/////////////////////////////////////
     public static final String BUS_PATH_TABLE = "bus_path_table"; //Таблица маршрутов
     public static final String BUS_STOP_TABLE = "bus_stop_table"; //Таблица остановок
     public static final String BUS_TIME_TABLE = "bus_time_table"; //Таблица времени остановок
@@ -54,6 +56,7 @@ public class DbOpenHelper extends SQLiteOpenHelper{
     public static final String TYPE_TRANSPORT_ID = "Type_transport_id";
     public static final String BUS_PATH_STOP_ID ="Bus_path_stop_id";
 
+
     private static final String TYPE_TRANSPORT_CREATE_TABLE = "create table " + TYPE_TRANSPORT_TABLE  + " ( id integer primary key autoincrement, " + NAME + " TEXT)";
     private static final String BUS_PATH_CREATE_TABLE = "create table " + BUS_PATH_TABLE  + " ( id integer primary key autoincrement, " + NAME + " TEXT, " + TYPE_TRANSPORT_ID + " integer)";
     private static final String BUS_STOP_CREATE_TABLE = "create table " + BUS_STOP_TABLE  + " ( id integer primary key autoincrement, " + NAME + " TEXT)";
@@ -65,7 +68,11 @@ public class DbOpenHelper extends SQLiteOpenHelper{
         super(context, DB_NAME, null,DB_VERSION);
         myContext = context;
     }
-
+    /**
+     * Check database exists
+     * @param sqLiteDatabase SQLiteDatabase
+     * @throws IOException If there is any I/O problem
+     */
     public void proverka(SQLiteDatabase sqLiteDatabase) {
         if(isTableExists(sqLiteDatabase, "bus_path_table")) {
         }
@@ -93,7 +100,12 @@ public class DbOpenHelper extends SQLiteOpenHelper{
         sqLiteDatabase.execSQL(TYPE_TRANSPORT_CREATE_TABLE);
         sqLiteDatabase.execSQL(BUS_STOP_PATH_CREATE_TABLE);
     }
-
+    /**
+     * Check database exists
+     * @return false if database no exits, if database exist return true
+     * @param tableName String
+     * @param db SQLiteDatabase
+     */
     boolean isTableExists(SQLiteDatabase db, String tableName) {
         if (tableName == null || db == null || !db.isOpen()) {
             return false;
@@ -107,6 +119,10 @@ public class DbOpenHelper extends SQLiteOpenHelper{
         return count > 0;
     }
 
+    /**
+     * Copy database from assets
+     * @throws IOException If there is any I/O problem
+     */
     public void copyDataBase() throws IOException {
         InputStream myInput = myContext.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;

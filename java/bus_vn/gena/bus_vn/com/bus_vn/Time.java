@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 
 import java.util.ArrayList;
 /**

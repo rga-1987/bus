@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.tabs;
+package bus_vn.gena.bus_vn.com.bus_vn.tabs;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -30,10 +30,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
-import com.bus_vn.gena.bus_vn.DbOpenHelper;
-import com.bus_vn.gena.bus_vn.List_bus_stop;
-import com.bus_vn.gena.bus_vn.R;
-import com.bus_vn.gena.bus_vn.Scheme;
+import bus_vn.gena.bus_vn.com.bus_vn.DbOpenHelper;
+import bus_vn.gena.bus_vn.com.bus_vn.List_bus_stop;
+import bus_vn.gena.bus_vn.com.bus_vn.R;
+import bus_vn.gena.bus_vn.com.bus_vn.Scheme;
 
 
 import java.util.ArrayList;

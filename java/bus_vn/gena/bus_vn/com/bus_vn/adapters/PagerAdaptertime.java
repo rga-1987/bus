@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters;
+package bus_vn.gena.bus_vn.com.bus_vn.adapters;
 /**
  * Created by gena on 02.10.2015.
  */
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.tabs.Tab_time;
+import bus_vn.gena.bus_vn.com.bus_vn.tabs.Tab_time;
 import java.util.ArrayList;
 
 public class PagerAdaptertime extends FragmentStatePagerAdapter {

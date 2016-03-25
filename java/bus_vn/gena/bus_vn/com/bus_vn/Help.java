@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
 /**
- * Created by gena on 09.10.2015.
+ * How to Contact Us
+ * Created by Gena on 09.10.2015
+ * @author Gena
+ * @version 1.0
+ *
  */
-//Класс для работы с активити с контактами для помощи
 public class Help extends AppCompatActivity{
     Toolbar toolbar;
     @Override
@@ -35,6 +37,7 @@ public class Help extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {

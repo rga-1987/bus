@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters;
+package bus_vn.gena.bus_vn.com.bus_vn.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.tabs.Tab_list_bus_stop;
+import bus_vn.gena.bus_vn.com.bus_vn.tabs.Tab_list_bus_stop;
 import java.util.ArrayList;
 
 public class PageAdapterBusStop extends FragmentStatePagerAdapter {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters;
+package bus_vn.gena.bus_vn.com.bus_vn.adapters;
 /**
  * Created by gena on 13.10.2015.
  */
@@ -24,8 +24,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import com.bus_vn.gena.bus_vn.R;
-import com.bus_vn.gena.bus_vn.Time;
+import bus_vn.gena.bus_vn.com.bus_vn.R;
+import bus_vn.gena.bus_vn.com.bus_vn.Time;
 import java.util.ArrayList;
 
 public class ListviewArrayAdapterBusTime extends ArrayAdapter<String>{

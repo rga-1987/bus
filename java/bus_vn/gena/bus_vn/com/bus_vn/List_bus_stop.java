@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -21,40 +21,39 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters.PagerAdaptertime;
+import bus_vn.gena.bus_vn.com.bus_vn.adapters.PageAdapterBusStop;
+
+
 import java.util.ArrayList;
+
 /**
- * Created by gena on 18.09.2015.
+ * Created by gena on 09.10.2015.
  */
-public class List_bus_time extends AppCompatActivity{
+//Класс для работы с активити со списком остановок (активити с кружочками)
+public class List_bus_stop extends AppCompatActivity{
     TabLayout tabLayout;
     Toolbar toolbar;
-    String busPathId;   //Остановка
-    String busStopId;   //Остановка
-    String typeDay;
-    ArrayList<String> kolTypeDay=new ArrayList<String>();
+    String busPathId;   //номер автобуса или троллейбуса
+    ArrayList<String> kolTypeDay= new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_bus);
-        setTitle("Выбор остановки");
-
-        Intent intent = getIntent();
-        busPathId = intent.getStringExtra("busPathId");
-        busStopId = intent.getStringExtra("busStopId");
-        typeDay=intent.getStringExtra("typeDay");
+        setContentView(R.layout.list_bus_stop);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("Выбор остановки");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Intent intent = getIntent();
+        busPathId = intent.getStringExtra("busPathId");
         Context context = getApplicationContext();
+
         DbOpenHelper dbOpenHelper = new DbOpenHelper(context);
         SQLiteDatabase db;
         db = dbOpenHelper.getWritableDatabase();
@@ -90,49 +89,17 @@ public class List_bus_time extends AppCompatActivity{
             case 2:
                 tabLayout.addTab(tabLayout.newTab().setText("РАБОЧИЕ"));
                 tabLayout.addTab(tabLayout.newTab().setText("ВЫХОДНЫЕ"));
-                if(typeDay.equals("2")){
-                    new Handler().postDelayed(
-                        new Runnable(){
-                            @Override
-                            public void run(){
-                                tabLayout.getTabAt(1).select();
-                            }
-                        }, 1);
-                    }
                 break;
             case 3:
                 tabLayout.addTab(tabLayout.newTab().setText("РАБОЧИЕ"));
                 tabLayout.addTab(tabLayout.newTab().setText("СУББОТА"));
                 tabLayout.addTab(tabLayout.newTab().setText("ВОСКРЕСЕНЬЕ"));
-                //выделяем нужный нам tab на котором была выбрана остановка
-                //например если выбрана суббота, то и в активити с временем для этой остановки
-                // тоже будет показана суббота
-                switch (typeDay){
-                    case "2"://выходные
-                        new Handler().postDelayed(
-                            new Runnable(){
-                                @Override
-                                public void run(){
-                                    tabLayout.getTabAt(2).select();
-                                }
-                            }, 1);
-                        break;
-                    case "3"://суббота
-                        new Handler().postDelayed(
-                            new Runnable(){
-                                @Override
-                                public void run(){
-                                    tabLayout.getTabAt(1).select();
-                                }
-                            }, 1);
-                        break;
-                }
                 break;
             default:
                 break;
         }
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final PagerAdaptertime adapter = new PagerAdaptertime  (getSupportFragmentManager(), tabLayout.getTabCount(),busPathId,busStopId,kolTypeDay);
+        final PageAdapterBusStop adapter = new PageAdapterBusStop(getSupportFragmentManager(), tabLayout.getTabCount(),busPathId,kolTypeDay);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
@@ -151,7 +118,7 @@ public class List_bus_time extends AppCompatActivity{
         switch (item.getItemId()){
             case android.R.id.home:
                 finish();
-            return true;
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

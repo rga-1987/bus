@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -22,7 +22,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import com.bus_vn.gena.bus_vn.com.bus_vn.gena.bus_vn.adapters.PagerAdapterBus;
+import bus_vn.gena.bus_vn.com.bus_vn.adapters.PagerAdapterBus;
 /**
  * Created by gena on 18.09.2015.
  */

@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.bus_vn.gena.bus_vn;
+package bus_vn.gena.bus_vn.com.bus_vn;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -95,46 +94,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     e.printStackTrace();
                 }
                 break;
-                //обработка нажатия кнопки "Выход"
-                case R.id.enterprise_bus:
-                    try{
-                        // Создаем объект Intent для вызова новой Activity
-                        Intent intent = new Intent(this, Enterprise_bus.class);
-                        // запуск activity
-                        startActivity(intent);
-                    }
-                    catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    break;
-                //обработка нажатия кнопки расписание движения
-                case R.id.bus_list:
-                    try{
-                        // Создаем объект Intent для вызова новой Activity
-                        Intent intent = new Intent(this, List_bus.class);
-                        intent.putExtra("type","listBus");
-                        // запуск activity
-                        startActivity(intent);
-                    }
-                    catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    break;
-                //обработка нажатия кнопки расписание движения
-                case R.id.scheme:
-                    try{
-                        // Создаем объект Intent для вызова новой Activity
-                        Intent intent = new Intent(this, List_bus.class);
-                        intent.putExtra("type","scheme");
-                        // запуск activity
-                        startActivity(intent);
-                    }
-                    catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    break;
+            //обработка нажатия кнопки "Выход"
+            case R.id.enterprise_bus:
+                try{
+                    // Создаем объект Intent для вызова новой Activity
+                    Intent intent = new Intent(this, Enterprise_bus.class);
+                    // запуск activity
+                    startActivity(intent);
                 }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+                break;
+            //обработка нажатия кнопки расписание движения
+            case R.id.bus_list:
+                try{
+                    // Создаем объект Intent для вызова новой Activity
+                    Intent intent = new Intent(this, List_bus.class);
+                    intent.putExtra("type","listBus");
+                    // запуск activity
+                    startActivity(intent);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+                break;
+            //обработка нажатия кнопки расписание движения
+            case R.id.scheme:
+                try{
+                    // Создаем объект Intent для вызова новой Activity
+                    Intent intent = new Intent(this, List_bus.class);
+                    intent.putExtra("type","scheme");
+                    // запуск activity
+                    startActivity(intent);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+                break;
         }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
